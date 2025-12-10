@@ -1,0 +1,987 @@
+/* planos.css - ESTILOS PRÓPRIOS DA PÁGINA DE PLANOS */
+
+/* ===== VARIÁVEIS ===== */
+:root {
+    --primary: #833ab4;
+    --primary-light: #9d4dc9;
+    --secondary: #fd1d1d;
+    --accent: #fcb045;
+    --text: #0f172a;
+    --text-light: #64748b;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --border: #e2e8f0;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --radius-sm: 8px;
+    --radius: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --shadow: 0 4px 20px rgba(15, 23, 42, 0.1);
+    --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.15);
+    --gradient: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    --gradient-light: linear-gradient(135deg, rgba(131, 58, 180, 0.1), rgba(253, 29, 29, 0.1));
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.2rem; }
+
+.text-grad {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--gradient);
+    color: white;
+    box-shadow: var(--shadow);
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    border: none;
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-weight: 600;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+
+    /* ESSENCIAL para remover as falhas nos cantos */
+    overflow: hidden;
+}
+
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-login {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--border);
+}
+
+.btn-login:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 2px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-planos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    padding: 16px 0;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo-grad {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ===== HERO ===== */
+.hero-planos {
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-planos::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(131, 58, 180, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.badge-hero {
+    display: inline-flex;
+    align-items: center;
+    background: var(--gradient);
+    color: var(--bg-white);
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 48px;
+    line-height: 1.8;
+}
+
+/* ===== PLAN TOGGLE ===== */
+.plan-toggle {
+    margin-top: 40px;
+}
+
+.toggle-wrapper {
+    display: inline-flex;
+    background: white;
+    padding: 6px;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.toggle-btn {
+    padding: 12px 32px;
+    border: none;
+    background: none;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.toggle-btn.active {
+    background: var(--gradient);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.save-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--success);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ===== PLANOS ===== */
+.planos-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.planos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+}
+
+.plano-card {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: 40px 32px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.plano-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.plano-card.featured {
+    border: 2px solid var(--primary);
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.plano-card.featured:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.plano-badge-popular {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.plano-header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+}
+
+.plano-badge {
+    display: inline-block;
+    background: var(--gradient-light);
+    color: var(--primary);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.plano-name {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.plano-price {
+    margin: 20px 0;
+}
+
+.plano-price .price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.plano-price .period {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.plano-desc {
+    color: var(--text-light);
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.plano-users {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.plano-users i {
+    color: var(--primary);
+}
+
+/* Features do plano */
+.plano-features {
+    flex-grow: 1;
+    margin-bottom: 32px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.feature i {
+    color: var(--success);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.feature.disabled {
+    opacity: 0.5;
+}
+
+.feature.disabled i {
+    color: var(--danger);
+}
+
+/* CTA do plano */
+.plano-cta {
+    margin-top: auto;
+}
+
+.btn-plano {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.plano-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* ===== COMPARAÇÃO ===== */
+.comparison-section {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 16px auto 0;
+}
+
+.comparison-table {
+    background: white;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    background: var(--bg-light);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+}
+
+.table-header > div,
+.table-row > div {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+}
+
+.col-feature {
+    background: rgba(248, 250, 252, 0.5);
+    font-weight: 500;
+}
+
+.col-plan {
+    justify-content: center;
+    text-align: center;
+}
+
+.col-plan i.fa-check {
+    color: var(--success);
+}
+
+.col-plan i.fa-times {
+    color: var(--danger);
+}
+
+/* ===== FAQ ===== */
+.faq-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: var(--bg-light);
+}
+
+.faq-question h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.faq-question i {
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer.active {
+    max-height: 200px;
+}
+
+.faq-answer p {
+    padding: 0 24px 24px;
+    color: var(--text-light);
+}
+
+/* ===== CTA ===== */
+.cta-section {
+    padding: 100px 0;
+    background: var(--gradient);
+    color: white;
+}
+
+.cta-box {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: 60px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    color: var(--text);
+    margin-bottom: 16px;
+}
+
+.cta-desc {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-section .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.cta-section .btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* ===== FOOTER ===== */
+.footer-planos {
+    background: var(--text);
+    color: white;
+    padding: 80px 0 32px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.footer-brand .footer-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.footer-brand > p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--gradient);
+    transform: translateY(-2px);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.link-group h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.link-group a {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.link-group a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: white;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+    .planos-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .plano-card.featured {
+        transform: none;
+    }
+    
+    .plano-card.featured:hover {
+        transform: translateY(-8px);
+    }
+    
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr;
+        display: block;
+    }
+    
+    .col-feature {
+        background: var(--bg-light);
+        font-weight: 600;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .col-plan {
+        justify-content: flex-start;
+        text-align: left;
+        padding: 12px 24px;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .col-plan::before {
+        content: attr(data-label);
+        font-weight: 600;
+        margin-right: 16px;
+        min-width: 80px;
+    }
+    
+    .table-row:last-child .col-plan:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .nav-actions {
+        display: none;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .hero-planos {
+        padding: 120px 0 60px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .cta-box {
+        padding: 40px 24px;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-actions .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-desc {
+        font-size: 1.1rem;
+    }
+    
+    .toggle-wrapper {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .toggle-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .plano-card {
+        padding: 32px 24px;
+    }
+    
+    .plano-price .price {
+        font-size: 2.5rem;
+    }
+}
+
+.footer-planos .footer-brand .footer-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient); /* MESMO GRADIENTE */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* ===== BOTÕES DOS PLANOS - TODOS COM MESMA COR ===== */
+/* Aplica o mesmo estilo do botão "Escolher Plano Pro" para todos */
+.btn-plano.btn-outline,
+.btn-plano.btn-primary {
+    background: var(--gradient) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: var(--shadow) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Efeito hover para todos os botões */
+.btn-plano.btn-outline:hover,
+.btn-plano.btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+/* Remove o estilo outline original */
+.btn-plano.btn-outline {
+    background: var(--gradient) !important;
+    color: white !important;
+}
+
+/* Ajusta o ícone dos botões */
+.btn-plano.btn-outline i,
+.btn-plano.btn-primary i {
+    color: white !important;
+}
+
+/* Garante que o botão "Falar com Vendas" também tenha o mesmo estilo */
+.plano-card:nth-child(3) .btn-plano.btn-outline {
+    background: var(--gradient) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* Remove qualquer borda que possa ficar visível */
+.btn-plano {
+    border: none !important;
+}
+
+/* Se precisar, ajuste o hover específico */
+.btn-plano:hover {
+    opacity: 0.95;
+}
+
+/* ===== ALINHAR ALTURA DOS PLANOS ===== */
+.planos-grid {
+    align-items: stretch; /* Faz todos os cards terem mesma altura */
+}
+
+.plano-card {
+    height: 100%; /* Ocupa toda a altura disponível */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Remove o scale do plano featured */
+.plano-card.featured {
+    transform: none; /* Remove o scale(1.05) */
+    border: 2px solid var(--primary);
+    position: relative;
+}
+
+/* Mantém apenas o efeito hover */
+.plano-card.featured:hover {
+    transform: translateY(-8px); /* Só o translate no hover */
+}
+
+/* Ajusta a posição do badge "Mais Popular" */
+.plano-badge-popular {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* Garante que o conteúdo interno também ocupe toda a altura */
+.plano-features {
+    flex-grow: 1; /* Faz a lista de features expandir */
+    margin-bottom: 32px;
+}
+
+/* Se ainda estiver desalinhado, adicione altura mínima */
+.plano-card {
+    min-height: 680px; /* Altura mínima igual para todos */
+}
+
+/* Para telas menores, ajuste responsivo */
+@media (max-width: 1024px) {
+    .plano-card {
+        min-height: auto; /* Remove altura fixa em mobile */
+    }
+    
+    .planos-grid {
+        gap: 24px;
+    }
+}
+
+/* Solução alternativa: se o problema for o padding extra */
+.plano-card.featured {
+    padding: 40px 32px; /* Mesmo padding dos outros */
+}

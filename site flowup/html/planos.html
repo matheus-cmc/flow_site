@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos - FlowUp</title>
+    <link rel="stylesheet" href="../css/planos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar-planos">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">
+                    <span class="logo-grad">FlowUp</span>
+                </a>
+                <div class="nav-menu">
+                    <a href="site.html" class="nav-link">Início</a>
+                    <a href="funcionalidades.html" class="nav-link">Funcionalidades</a>
+                    <a href="planos.html" class="nav-link active">Planos</a>
+                    <a href="equipe.html" class="nav-link">Equipe</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="login.html" class="btn btn-login">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-planos">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge-hero">
+                    SEM SURPRESAS
+                </span>
+                <h1 class="hero-title">
+                    Planos que <span class="text-grad">crescem</span> com você
+                </h1>
+                <p class="hero-desc">
+                    Escolha o plano ideal para automatizar suas postagens nas redes sociais.
+                    Todos incluem teste gratuito de 14 dias, sem cartão de crédito.
+                </p>
+                
+                <div class="plan-toggle">
+                    <div class="toggle-wrapper">
+                        <button class="toggle-btn active" data-period="monthly">
+                            <span>Mensal</span>
+                        </button>
+                        <button class="toggle-btn" data-period="yearly">
+                            <span>Anual</span>
+                            <span class="save-badge">Economize 20%</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section class="planos-section">
+        <div class="container">
+            <div class="planos-grid">
+                <!-- Plano Starter -->
+                <div class="plano-card">
+                    <div class="plano-header">
+                        <div class="plano-badge">Básico</div>
+                        <h3 class="plano-name">Starter</h3>
+                        <div class="plano-price">
+                            <span class="price" data-monthly="R$ 29,99" data-yearly="R$ 23,99">R$ 29,99</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p class="plano-desc">Para autônomos e pequenos negócios</p>
+                        <div class="plano-users">
+                            <i class="fas fa-user"></i>
+                            <span>Até 3 perfis de rede social</span>
+                        </div>
+                    </div>
+                    
+                    <div class="plano-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>50 postagens agendadas/mês</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Instagram e Facebook</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Calendário de publicação visual</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Agendamento automático</span>
+                        </div>
+                        <div class="feature disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Agendamento em múltiplas plataformas</span>
+                        </div>
+                        <div class="feature disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Análise de melhores horários</span>
+                        </div>
+                        <div class="feature disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Relatórios de desempenho</span>
+                        </div>
+                    </div>
+                    
+                    <div class="plano-cta">
+                        <a href="#" class="btn btn-plano btn-outline">
+                            <i class="fas fa-rocket"></i>
+                            Escolher Plano Starter
+                        </a>
+                        <p class="plano-note">Sem cartão de crédito necessário</p>
+                    </div>
+                </div>
+                
+                <!-- Plano Pro (Destaque) -->
+                <div class="plano-card featured">
+                    <div class="plano-badge-popular">Mais Popular</div>
+                    <div class="plano-header">
+                        <div class="plano-badge">Recomendado</div>
+                        <h3 class="plano-name">Pro</h3>
+                        <div class="plano-price">
+                            <span class="price" data-monthly="R$ 299,99" data-yearly="R$ 239,99">R$ 299,99</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p class="plano-desc">Para agências e equipes de marketing</p>
+                        <div class="plano-users">
+                            <i class="fas fa-users"></i>
+                            <span>Até 10 perfis de rede social</span>
+                        </div>
+                    </div>
+                    
+                    <div class="plano-features">
+                    
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Instagram, Facebook, Twitter, LinkedIn</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Agendamento inteligente automático</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Suporte prioritário</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Análise de melhores horários de postagem</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Integração com Canva e Google Drive</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Relatórios detalhados de engajamento</span>
+                        </div>
+                    </div>
+                    
+                    <div class="plano-cta">
+                        <a href="#" class="btn btn-plano btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Escolher Plano Pro
+                        </a>
+                        <p class="plano-note">+500 marcas já usam este plano</p>
+                    </div>
+                </div>
+                
+                <!-- Plano Enterprise -->
+                <div class="plano-card">
+                    <div class="plano-header">
+                        <div class="plano-badge">Custom</div>
+                        <h3 class="plano-name">Enterprise</h3>
+                        <div class="plano-price">
+                            <span class="price">Personalizado</span>
+                        </div>
+                        <p class="plano-desc">Para grandes empresas e agências</p>
+                        <div class="plano-users">
+                            <i class="fas fa-building"></i>
+                            <span>Perfis ilimitados</span>
+                        </div>
+                    </div>
+                    
+                    <div class="plano-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Todos os recursos do Pro</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Todas as redes sociais (incluindo TikTok, Pinterest)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>API dedicada para integrações</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Gerente de conta dedicado</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Relatórios personalizados e SLA</span>
+                        </div>
+                    </div>
+                    
+                    <div class="plano-cta">
+                        <a href="#" class="btn btn-plano btn-outline">
+                            <i class="fas fa-headset"></i>
+                            Falar com Vendas
+                        </a>
+                        <p class="plano-note">Solicite uma demonstração personalizada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARAÇÃO DE PLANOS -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comparação <span class="text-grad">completa</span> de planos</h2>
+                <p class="section-subtitle">Veja em detalhes o que cada plano oferece para automação</p>
+            </div>
+            
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="col-feature">Funcionalidade de Automação</div>
+                    <div class="col-plan">Starter</div>
+                    <div class="col-plan">Pro</div>
+                    <div class="col-plan">Enterprise</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="col-feature">Perfis de rede social</div>
+                    <div class="col-plan">3</div>
+                    <div class="col-plan">10</div>
+                    <div class="col-plan">Ilimitado</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="col-feature">Postagens/mês</div>
+                    <div class="col-plan">50</div>
+                    <div class="col-plan">Ilimitado</div>
+                    <div class="col-plan">Ilimitado</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="col-feature">Redes sociais</div>
+                    <div class="col-plan">Instagram, Facebook</div>
+                    <div class="col-plan">+Twitter, LinkedIn</div>
+                    <div class="col-plan">Todas + TikTok, Pinterest</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="col-feature">Agendamento automático</div>
+                    <div class="col-plan">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="col-plan">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="col-plan">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="col-feature">Análise de horários otimizados</div>
+                    <div class="col-plan">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="col-plan">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="col-plan">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="col-feature">Relatórios de desempenho</div>
+                    <div class="col-plan">Básicos</div>
+                    <div class="col-plan">Completos</div>
+                    <div class="col-plan">Personalizados</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="col-feature">Automação com IA</div>
+                    <div class="col-plan">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="col-plan">Limitada</div>
+                    <div class="col-plan">Avançada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perguntas <span class="text-grad">frequentes</span></h2>
+                <p class="section-subtitle">Tire suas dúvidas sobre automação de postagens</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Como funciona o agendamento automático?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você cria suas postagens, define data e hora, e nossa plataforma publica automaticamente nas redes sociais configuradas. Pode agendar semanas ou meses de conteúdo de uma vez.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Quais redes sociais são suportadas?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No plano Starter: Instagram e Facebook. No Pro: Instagram, Facebook, Twitter e LinkedIn. No Enterprise: todas as anteriores + TikTok, Pinterest e outras.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Posso agendar Stories e Reels?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Nos planos Pro e Enterprise você pode agendar Stories do Instagram e planejar Reels com antecedência, além das postagens tradicionais.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>O que acontece se eu exceder o limite de postagens?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você será notificado antes de atingir o limite. Para postagens ilimitadas, basta fazer upgrade para o plano Pro.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Como funciona a análise de melhores horários?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nos planos Pro e Enterprise, nossa IA analisa o histórico de engajamento do seu perfil e sugere os melhores horários para postar automaticamente.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Posso gerenciar múltiplos clientes/contas?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! O plano Pro permite até 3 projetos/clientes simultâneos. No Enterprise, gerencie quantos clientes precisar com separação completa de contas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2 class="cta-title">Pronto para automatizar suas postagens?</h2>
+                <p class="cta-desc">Comece seu teste gratuito de 14 dias e veja como é fácil agendar todo seu conteúdo social.</p>
+                <div class="cta-actions">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Começar Teste Grátis
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-calendar-alt"></i>
+                        Agendar Demonstração
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-planos">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">FlowUp</a>
+                    <p>Automatize e gerencie todas suas postagens em redes sociais em uma só plataforma.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Produto</h4>
+                        <a href="funcionalidades.html">Funcionalidades</a>
+                        <a href="planos.html">Planos</a>
+                        <a href="#">API</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Empresa</h4>
+                        <a href="equipe.html">Sobre</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contato</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Recursos</h4>
+                        <a href="#">Documentação</a>
+                        <a href="#">Tutoriais</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 FlowUp. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle entre mensal/anual
+        const toggleBtns = document.querySelectorAll('.toggle-btn');
+        const priceElements = document.querySelectorAll('.price');
+        
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active de todos
+                toggleBtns.forEach(b => b.classList.remove('active'));
+                // Adiciona active no clicado
+                btn.classList.add('active');
+                
+                // Atualiza preços
+                const period = btn.dataset.period;
+                priceElements.forEach(priceEl => {
+                    const monthlyPrice = priceEl.dataset.monthly;
+                    const yearlyPrice = priceEl.dataset.yearly;
+                    
+                    if (monthlyPrice && yearlyPrice) {
+                        priceEl.textContent = period === 'monthly' ? monthlyPrice : yearlyPrice;
+                    }
+                });
+            });
+        });
+        
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle answer
+                answer.classList.toggle('active');
+                
+                // Toggle icon
+                if (icon.classList.contains('fa-chevron-down')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

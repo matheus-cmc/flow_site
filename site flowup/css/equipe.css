@@ -1,0 +1,782 @@
+/* equipe.css - ESTILOS PRÓPRIOS DA PÁGINA DA EQUIPE */
+
+/* ===== VARIÁVEIS ===== */
+:root {
+    --primary: #833ab4;
+    --primary-light: #9d4dc9;
+    --secondary: #fd1d1d;
+    --accent: #fcb045;
+    --text: #0f172a;
+    --text-light: #64748b;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --border: #e2e8f0;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --radius-sm: 8px;
+    --radius: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --shadow: 0 4px 20px rgba(15, 23, 42, 0.1);
+    --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.15);
+    --gradient: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    --gradient-light: linear-gradient(135deg, rgba(131, 58, 180, 0.1), rgba(253, 29, 29, 0.1));
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.2rem; }
+
+.text-grad {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    border: none;
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-weight: 600;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+
+    /* ESSENCIAL para remover as falhas nos cantos */
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-login {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--border);
+}
+
+.btn-login:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 2px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+}
+
+/* ===== NAVBAR ===== */
+.navbar-equipe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    padding: 16px 0;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo-grad {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ===== HERO ===== */
+.hero-equipe {
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-equipe::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(131, 58, 180, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.badge-hero {
+    display: inline-flex;
+    align-items: center;
+    background: var(--gradient);
+    color: var(--bg-white);
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 48px;
+    line-height: 1.8;
+}
+
+/* ===== NOSSA HISTÓRIA ===== */
+.historia-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.historia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.historia-content h2 {
+    margin-bottom: 24px;
+}
+
+.historia-text {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+/* Imagem do escritório */
+.historia-visual {
+    position: relative;
+}
+
+.office-image {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.office-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.office-image:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 40px 32px 32px;
+    color: white;
+}
+
+.overlay-content i {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.overlay-content p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.overlay-content span {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ===== NOSSA EQUIPE DETALHADA ===== */
+.equipe-detalhada {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 16px auto 0;
+}
+
+.equipe-descricao {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.equipe-descricao p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Integrantes - NOVO LAYOUT PARA FOTOS COMPLETAS */
+.integrantes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.integrante-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.integrante-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.integrante-avatar {
+    position: relative;
+    overflow: visible;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient);
+}
+
+.avatar-foto {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin: 40px 0 20px;
+    border: 4px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.integrante-card:hover .avatar-foto {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient);
+    z-index: -1;
+}
+
+.integrante-info {
+    padding: 32px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.integrante-nome {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+    color: var(--text);
+}
+
+.integrante-cargo {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.integrante-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.habilidade-tag {
+    background: var(--gradient-light);
+    color: var(--primary);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(131, 58, 180, 0.2);
+}
+
+.integrante-descricao {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.integrante-tarefas {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    text-align: left;
+}
+
+.integrante-tarefas h4 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: var(--text);
+    text-align: center;
+}
+
+.integrante-tarefas ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.integrante-tarefas li {
+    padding: 6px 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.integrante-tarefas li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+.footer-equipe {
+    background: var(--text);
+    color: white;
+    padding: 80px 0 32px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.footer-brand .footer-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.footer-brand > p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--gradient);
+    transform: translateY(-2px);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.link-group h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.link-group a {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.link-group a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+.footer-cta .btn-outline-light {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+    .historia-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .integrantes-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .nav-actions {
+        display: none;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    
+    .hero-equipe {
+        padding: 120px 0 60px;
+    }
+    
+    .hero-desc {
+        font-size: 1.1rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-desc {
+        font-size: 1.1rem;
+    }
+    
+    .integrante-info {
+        padding: 24px;
+    }
+    
+    .avatar-foto {
+        width: 150px;
+        height: 150px;
+        margin: 30px 0 15px;
+    }
+    
+    .office-image .image-overlay {
+        padding: 24px 20px 20px;
+    }
+    
+    .overlay-content p {
+        font-size: 1rem;
+    }
+    
+    .integrante-nome {
+        font-size: 1.5rem;
+    }
+}
+
+.footer-equipe .footer-brand .footer-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient); /* MESMO GRADIENTE */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* ===== MELHORIA DAS FOTOS DA EQUIPE ===== */
+.integrante-avatar {
+    background: var(--gradient);
+    padding: 40px 0 20px;
+}
+
+.avatar-foto {
+    width: 180px;
+    height: 180px;
+    object-fit: cover; /* Mantém a proporção e preenche */
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: var(--gradient); /* Fundo do mesmo gradiente */
+    transition: all 0.3s ease;
+}
+
+/* Ajuste individual para cada foto */
+.integrantes-grid .integrante-card:nth-child(1) .avatar-foto {
+    object-position: center 70%; /* Erick - ajusta posição vertical */
+}
+
+.integrantes-grid .integrante-card:nth-child(2) .avatar-foto {
+    object-position: center 30%; /* Matheus - ajusta posição vertical */
+}
+
+.integrantes-grid .integrante-card:nth-child(3) .avatar-foto {
+    object-position: center 30%; /* Mariana - ajusta posição vertical */
+}
+
+/* Remove fundo branco que causa partes brancas */
+.avatar-foto {
+    background: transparent;
+}
+
+/* Se ainda tiver partes brancas, adicione um pouco de zoom */
+.avatar-foto {
+    transform: scale(1.1);
+}
+
+.integrante-card:hover .avatar-foto {
+    transform: scale(1.15); /* Zoom um pouco maior no hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Opção: Se as fotos tiverem fundo branco, forçar fundo do gradiente */
+.avatar-foto::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: var(--gradient);
+    border-radius: 50%;
+    z-index: -1;
+}
